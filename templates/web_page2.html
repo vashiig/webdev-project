@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <title>Title</title>
+    <style>
+     a {letter-spacing: 2px;
+           text-decoration: none;}
+
+        body, html {height: 100%;
+                    line-height: 1.8;
+        margin: 0;}
+
+        .top-navbar {
+                overflow: hidden;
+                background-color: darkcyan;
+                position: fixed;
+                top: 0px;
+                width: 100%;
+                }
+
+        .top-navbar a {
+                float: left;
+                display: block;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 17px 16px;
+                text-decoration: none;
+                font-size: 15px;
+                }
+
+        .top-navbar a:hover {
+              background: #ddd;
+              color: black;
+            }
+
+            .padd-section {
+            padding-bottom: 80px;
+            padding-top: 80px;}
+        .section-title {margin-bottom: 80px;}
+
+    .footer{color: White;
+           background: grey;
+          padding: 16px;
+          margin: 30px;
+          height: auto;
+        }
+         .back-to-top {
+  position: fixed;
+  display: none;
+  background: #71c55d;
+  line-height: 1;
+  color: #fff;
+  padding: 7px 12px 13px 12px;
+  font-size: 16px;
+  border-radius: 2px;
+  right: 15px;
+  bottom: 15px;
+  transition: background 0.5s;
+}
+    </style>
+</head>
+<body>
+<div class="top-navbar">
+        <div class="top-bar top-white top-card" id="myNavbar">
+            <a href="#home" class="top-bar-item top-button top-wide">FxTrading</a>
+            <div class="top-right top-hide-small">
+                <a href="#algo_tools" class="top-bar-item top-button">Algo Tools</a>
+                <a href="#Tools" class="top-bar-item top-button"><i class="fa fa-user"></i> Tools</a>
+                <a href="#Open Account" class="top-bar-item top-button"><i class="fa fa-th"></i> Open Account</a>
+                <a href="#Compare Broker" class="top-bar-item top-button"><i class="fa fa-usd"></i> Compare Broker</a>
+                <a href="#Compare Broker" class="top-bar-item top-button"><i class="fas fa-book" aria-hidden="true" ></i> Educational</a>
+                <a href="#Compare Broker" class="top-bar-item top-button"><i class="fa fa-youtube" aria-hidden="true"></i> Videos</a>
+                <a href="#Compare Broker" class="top-bar-item top-button"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+                <a href="#contact" class="top-bar-item top-button"><i class="fa fa-envelope"></i> CONTACT</a>
+            </div>
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+            <i class="fa fa-bars"></i></a>
+        </div>
+    </div>
+
+<form name="basketOrderForm" id="basketOrderForm" method="post" action="#">
+	<input type="hidden" name="broker" value="fyers">
+	<section id="main" class="padd-section text-center" style="visibility: visible;">
+		<br>
+        <div class="container">
+			<div class="row text-center">
+				<div class="col-lg-2 col-md-3 col-sm-3">
+					<select class="form-control" name="startTime" id="startTime">
+						<option value="9:25">9:25 am</option>
+						<option value="9:26">9:26 am</option>
+						<option value="9:27">9:27 am</option>
+						<option value="9:28">9:28 am</option>
+						<option value="9:29">9:29 am</option>
+						<option value="9:30">9:30 am</option>
+						<option value="9:45">9:45 am</option>
+						<option value="10:00">10:00 am</option>
+						<option value="10:30">10:30 am</option>
+						<option value="11:00">11:00 am</option>
+						<option value="11:30">11:30 am</option>
+						<option value="12:00">12:00 pm</option>
+						<option value="12:30">12:30 pm</option>
+						<option value="13:00">1:00 pm</option>
+					</select>
+				</div>
+				<div class="col-lg-2 col-md-6 col-sm-6 text-center">
+					<button type="submit" class="btn btn-warning">Refresh</button>
+				</div>
+				<div class="col-lg-2 col-md-4 col-sm-4 text-center">
+					<a href="#" class="form-control"><img src="#.png" alt="ZERODHA"></a>
+				</div>
+				<div class="col-lg-2 col-md-4 col-sm-4 text-center">
+					<a href="#" class="form-control"><img src="#.png" alt="UPSTOX"></a>
+				</div>
+				<div class="col-lg-2 col-md-4 col-sm-4 text-center">
+					<a href="#" class="form-control"><img src="#.jpg" alt="ALICEBLUE"></a>
+				</div>
+				<div class="col-lg-2 col-md-4 col-sm-4 text-center">
+					<a href="#" class="form-control" style="border: 2px solid black"><img src="#.png" alt="FYERS"></a>
+				</div>
+			</div>
+
+			<br>
+			<div class="card text-center">
+				<div class="card">
+					<div class="text-center">
+						<p class="alert alert-success font-weight-bold">Short Straddle BANKNIFTY
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="#" target="_blank"><img src="#.png" height="25px" width="25px"></a></p>
+					</div>
+					<div class="text-center table-responsive">
+						<table class="table">
+							<thead>
+								<tr><th>Action</th><th>Contract</th><th>Option Type</th><th>@ 9:30</th><th>CMP</th><th>Result</th></tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="text-left">Sell 1 lot</td>
+									<td class="text-left">BANKNIFTY20APR20700CE</td>
+									<td class="text-left">20700 CE</td>
+									<td class="text-left">244</td>
+									<td class="text-left">417</td>
+									<td>-3460</td>
+								</tr>
+								<tr>
+									<td class="text-left">Sell 1 lot</td>
+									<td class="text-left">BANKNIFTY20APR20700PE</td>
+									<td class="text-left">20700 PE</td>
+									<td class="text-left">285</td>
+									<td class="text-left">120</td>
+									<td>3300</td>
+								</tr>
+								<tr>
+									<td class="text-right" colspan="6">
+										<b>Profit (in ₹):</b> <span style="color:red;font-size:18px;">-160 INR</span>&nbsp;&nbsp;|&nbsp;&nbsp; <b>Max Profit (in ₹):</b> <span style="color:green;font-size:18px;">1520 INR</span>&nbsp;&nbsp;|&nbsp;&nbsp; <b>Max Loss (in ₹):</b> <span style="color:red;font-size:18px;">-5060 INR</span>									</td>
+
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="row text-center">
+						<div class="col-lg-2 col-md-2 col-sm-2">
+							<label>No of lots</label>
+						</div>
+						<div class="col-lg-2 col-md-2 col-sm-2">
+							<select class="form-control" name="banknifty_noOfLots" id="banknifty_noOfLots">
+								<option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option><option value="60">60</option><option value="61">61</option><option value="62">62</option><option value="63">63</option><option value="64">64</option><option value="65">65</option><option value="66">66</option><option value="67">67</option><option value="68">68</option><option value="69">69</option><option value="70">70</option><option value="71">71</option><option value="72">72</option><option value="73">73</option><option value="74">74</option><option value="75">75</option><option value="76">76</option><option value="77">77</option><option value="78">78</option><option value="79">79</option><option value="80">80</option><option value="81">81</option><option value="82">82</option><option value="83">83</option><option value="84">84</option><option value="85">85</option><option value="86">86</option><option value="87">87</option><option value="88">88</option><option value="89">89</option><option value="90">90</option><option value="91">91</option><option value="92">92</option><option value="93">93</option><option value="94">94</option><option value="95">95</option><option value="96">96</option><option value="97">97</option><option value="98">98</option><option value="99">99</option>							</select>
+						</div>
+						<div class="col-lg-8 col-md-8 col-sm-8 text-left">
+                            <button type="button" class="btn btn-success" onclick="placeOrderInFyers('banknifty','BANKNIFTY20APR20700CE','BANKNIFTY20APR20700PE')">Execute Orders</button>
+							<button type="button" class="btn btn-danger" onclick="placeReverseOrderInFyers('banknifty','BANKNIFTY20APR20700CE','BANKNIFTY20APR20700PE')">Reverse / Exit Orders</button>
+							<a href="#" class="btn btn-warning">Design Strategy</a>
+												</div>
+					</div>
+                    <br>
+                    <div class="alert alert-danger">
+						This is limited profit, unlimited loss strategy. Good for range bound market, Risky for Trending market. Profit Zone:
+						20171- 21229
+                    </div>
+				</div>
+			</div>
+			<br>
+			<div class="card text-center">
+				<div class="card">
+					<div class="text-center">
+						<p class="alert alert-success font-weight-bold">Short Straddle NIFTY
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="#" target="_blank"><img src="#.png" height="25px" width="25px"></a></p>
+					</div>
+					<div class="text-center table-responsive">
+						<table class="table">
+							<thead>
+								<tr><th>Action</th><th>Contract</th><th>Option Type</th><th>@ 9:30</th><th>CMP</th><th>Result</th></tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="text-left">Sell 1 lot</td>
+									<td class="text-left">NIFTY20APR9450CE</td>
+									<td class="text-left">9450 CE</td>
+									<td class="text-left">68</td>
+									<td class="text-left">105</td>
+									<td>-2850</td>
+								</tr>
+								<tr>
+									<td class="text-left">Sell 1 lot</td>
+									<td class="text-left">NIFTY20APR9450PE</td>
+									<td class="text-left">9450 PE</td>
+									<td class="text-left">80</td>
+									<td class="text-left">27</td>
+									<td>3975</td>
+								</tr>
+								<tr>
+									<td class="text-right" colspan="6">
+										<b>Profit (in ₹):</b> <span style="color:green;font-size:18px;">1200 INR</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                        <b>Max Profit (in ₹):</b> <span style="color:green;font-size:18px;">1575 INR</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                        <b>Max Loss (in ₹):</b> <span style="color:red;font-size:18px;">-2850 INR</span>
+                                    </td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="row text-center">
+						<div class="col-lg-2 col-md-2 col-sm-2">
+							<label>No of lots</label>
+						</div>
+						<div class="col-lg-2 col-md-2 col-sm-2">
+							<select class="form-control" name="nifty_noOfLots" id="nifty_noOfLots">
+								<option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option><option value="60">60</option><option value="61">61</option><option value="62">62</option><option value="63">63</option><option value="64">64</option><option value="65">65</option><option value="66">66</option><option value="67">67</option><option value="68">68</option><option value="69">69</option><option value="70">70</option><option value="71">71</option><option value="72">72</option><option value="73">73</option><option value="74">74</option><option value="75">75</option><option value="76">76</option><option value="77">77</option><option value="78">78</option><option value="79">79</option><option value="80">80</option><option value="81">81</option><option value="82">82</option><option value="83">83</option><option value="84">84</option><option value="85">85</option><option value="86">86</option><option value="87">87</option><option value="88">88</option><option value="89">89</option><option value="90">90</option><option value="91">91</option><option value="92">92</option><option value="93">93</option><option value="94">94</option><option value="95">95</option><option value="96">96</option><option value="97">97</option><option value="98">98</option><option value="99">99</option>							</select>
+						</div>
+						<div class="col-lg-8 col-md-8 col-sm-8 text-left">
+                            <button type="button" class="btn btn-success" onclick="placeOrderInFyers('nifty','NIFTY20APR9450CE','NIFTY20APR9450PE')">Execute Orders</button>
+							<button type="button" class="btn btn-danger" onclick="placeReverseOrderInFyers('nifty','NIFTY20APR9450CE','NIFTY20APR9450PE')">Reverse / Exit Orders</button>
+							<a href="#" class="btn btn-warning">Design Strategy</a>
+
+						</div>
+					</div>
+                    <br>
+					<div class="alert alert-danger">
+						This is limited profit, unlimited loss strategy. Good for range bound market, Risky for Trending market. Profit Zone:
+						9303 - 9597
+                    </div>
+				</div>
+        	</div>
+
+        </div>
+    </section>
+</form>
+
+<footer class="footer">
+    <div class="copyright">
+        <div class="container text-center">
+            <p> <b>(C) this is a copyright</b></p>
+        </div>
+    </div>
+</footer>
+
+<a href="#" class="back-to-top" style="display: inline;"><i class="fa fa-chevron-up"></i></a>
+
+</body>
+</html>

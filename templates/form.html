@@ -1,0 +1,229 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <style>
+
+        a {letter-spacing: 2px;
+           text-decoration: none;}
+
+        body, html {height: 100%;
+                    line-height: 1.8;
+        margin: 0;}
+
+
+    span {
+  letter-spacing: 1px;
+  font-family: FontAwesome;
+}
+#mySearch {
+  width: 50%;
+  font-size: 18px;
+  padding: 11px;
+  border: 1px solid #ddd;
+}
+
+
+</style>
+	<script>
+
+	</script>
+</head>
+<body>
+<form name="basket_order" id="basketOrderform" method="post" action="#">
+<section id="main">
+<div class="container">
+<div class="jumbotron jumbotron-fluid" style="background-color:pale-green">
+<div class="row">
+    <div class="panel panel-info text-center">
+    <div class="panel-heading text-center">
+    <strong><span style="font-family: sans-serif; font-size:20px;">Place Your Strategy Basket Orders in Zerodha (only for registered members)</span></strong>
+    </div>
+    <div class="panel body text-center">
+        <div class="panel panel-success col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    				<span style="color: blue;">** Please turn off your browser's pop-up blocker to use this tool. **</span><br>
+    				<span style="color: green;">Basket Order Video Tutorial (<a href="#" target="_blank">Hindi</a> | <a href="#" target="_blank">English</a>)</span>
+        			<div class="panel-heading text-center">
+        				<strong>Select Exchange</strong>
+        			</div>
+        			<div class="panel-body text-center">
+        				<label class="radio-inline">
+					    	<input type="radio" name="optionExchange" id="optionNSE" value="NSE" checked="" onclick="exchangeChanged()"> NSE &nbsp;&nbsp;&nbsp;&nbsp;
+					   	</label>
+						<label class="radio-inline">
+					      	<input type="radio" name="optionExchange" id="optionFNO" value="FNO" onclick="exchangeChanged()"> FNO &nbsp;&nbsp;&nbsp;&nbsp;
+					    </label>
+					    <label class="radio-inline">
+					      	<input type="radio" name="optionExchange" id="optionMCX" value="MCX" onclick="exchangeChanged()"> MCX &nbsp;&nbsp;&nbsp;&nbsp;
+					    </label>
+        			</div>
+        		</div>
+        <div class="panel panel-success col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        			<div class="panel-heading text-center">
+        				<strong>Select Instrument / Contracts / Commodity</strong>            				
+        			</div>
+        			<div class="panel-body text-center">
+        				<input type="hidden" name="tradingSymbol" id="tradingSymbol">
+        				<input type="hidden" name="lotSize" id="lotSize">
+						<input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category" style="position: relative; display:inline-bloack">
+       			</div>
+        		</div>
+        <div class="panel panel-success col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        			<div class="panel-heading text-center">
+        				<strong>Select Product Type</strong>            				
+        			</div>
+        			<div class="panel-body text-center">
+        				<label class="radio-inline">
+					    	<input type="radio" name="optionProductType" id="optionMIS" value="MIS" checked="" onclick="productTypeChanged()"> MIS
+					   	</label>
+												<label class="radio-inline">
+							<input type="radio" name="optionProductType" id="optionNRML" value="CNC" onclick="productTypeChanged()"> CNC
+						</label>
+											    <label class="radio-inline">
+					      	<input type="radio" name="optionProductType" id="optionAMO" value="AMO" onclick="productTypeChanged()"> AMO
+					    </label>
+					    <label class="radio-inline">
+					      	<input type="radio" name="optionProductType" id="optionBO" value="BO" onclick="productTypeChanged()"> BO
+					    </label>
+					    <label class="radio-inline">
+					      	<input type="radio" name="optionProductType" id="optionCO" value="CO" onclick="javascript:alert('coming soon...');return false;"> CO
+					    </label>
+        			</div>
+        		</div>
+        <div class="panel panel-success col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        			<div class="panel-heading text-center">
+        				<strong>Select Order Type</strong>            				
+        			</div>
+        			<div class="panel-body text-center">
+        				<label class="radio-inline">
+					      	<input type="radio" name="optionOrderType" id="optionMARKET" value="MARKET" checked=""> MARKET
+					    </label>
+        				<label class="radio-inline">
+					    	<input type="radio" name="optionOrderType" id="optionLIMIT" value="LIMIT"> LIMIT
+					   	</label>
+						<label class="radio-inline">
+					      	<input type="radio" name="optionOrderType" id="optionSL" value="SL"> SL
+					    </label>
+					    <label class="radio-inline">
+					      	<input type="radio" name="optionOrderType" id="optionSLM" value="SL-M"> SL-M
+					    </label>
+        			</div>
+        		</div>
+        <div class="panel panel-success col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        			<div class="panel-heading text-center">
+        				<strong>Select Order Type</strong>            				
+        			</div>
+        			<div class="panel-body text-center">
+        				<label class="radio-inline">
+					      	<input type="radio" name="optionOrderType" id="optionMARKET" value="MARKET" checked=""> MARKET
+					    </label>
+        				<label class="radio-inline">
+					    	<input type="radio" name="optionOrderType" id="optionLIMIT" value="LIMIT"> LIMIT
+					   	</label>
+						<label class="radio-inline">
+					      	<input type="radio" name="optionOrderType" id="optionSL" value="SL"> SL
+					    </label>
+					    <label class="radio-inline">
+					      	<input type="radio" name="optionOrderType" id="optionSLM" value="SL-M"> SL-M
+					    </label>
+        			</div>
+        		</div>
+        <div class="panel panel-success col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        			<div class="panel-heading text-center">
+        				<strong>Transaction</strong>            				
+        			</div>
+        			<div class="panel-body text-center">
+        				<label class="radio-inline">
+					    	<input type="radio" name="optionTransactionType" id="optionBUY" value="BUY" checked=""> BUY
+					   	</label>
+						<label class="radio-inline">
+							<input type="radio" name="optionTransactionType" id="optionSELL" value="SELL"> SELL
+						</label>
+        			</div>
+        		</div>
+        <div class="panel panel-success col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="panel-heading text-center">
+        				<strong>Pricing</strong>            				
+        			</div>
+            <div class="panel-body text-center inline-block">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 d-inline-block">
+                    <label>Quantity</label>
+                    <input type="number" class="form-control" name="quantity" id="quantity" step="1" min="1" placeholder="Limit Price" value="1" size="10"></div>
+        			    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 d-inline-block">
+            				<label>Limit</label>
+            				<input type="number" class="form-control" name="limitPrice" id="limitPrice" step="0.05" min="0" value="0" placeholder="Limit Price" size="10">
+        				</div>
+        				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 d-inline-block">
+    					    <label>Trigger</label>
+    					    <input type="number" class="form-control" name="triggerPrice" id="triggerPrice" step="0.05" min="0" value="0" placeholder="Trigger Price" size="10">
+					    </div>
+					    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 d-inline-block">
+    					    <label>Target Points</label>
+    					    <input type="number" class="form-control" name="targetPoints" id="targetPoints" step="0.05" min="0" value="0" placeholder="Target Points" size="10" disabled="">
+					    </div>
+					    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 d-inline-block">
+    					    <label>Stoploss Points</label>
+    					    <input type="number" class="form-control" name="stoplossPoints" id="stoplossPoints" step="0.05" min="0" value="0" placeholder="Stoploss Points" size="10" disabled="">
+					    </div>
+        			</div>
+        		</div>
+        <div class="panel panel-success col-lg-6 col-md-6 col-sm-6 col-xs-6 d-inline-block">
+        			<div class="panel-body text-center col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        				<label class="btn btn-info" id="addrow">Add to Basket</label>
+    				</div>
+    				<div class="panel-body text-center col-lg-6 col-md-6 col-sm-6 col-xs-6">
+    				    <label class="btn btn-info" id="clearBasket">Clear Basket</label>
+        			</div>
+        		</div>
+        <div class="panel panel-success col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            		<table id="myTable" class="table table-condensed">
+                        <thead>
+                            <tr>
+                                <td>Symbol</td>
+                                <td>Quantity</td>
+                                <td>Transaction</td>
+                                <td>Product</td>
+                                <td>Order Type</td>
+                                <td>Limit Price</td>
+                                <td>Trigger Price</td>
+                                <td>Target</td>
+                                <td>Stoploss</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                        </tbody>
+                    </table>
+                </div>
+        <div class="panel panel-success col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <button class="btn btn-success form-control" onclick="placeBasketOrder()">Place Basket Orders</button>
+                </div>
+    </div>
+</div>
+</div>
+    
+<div class="panel panel-info">
+        		<div class="panel-body">
+	        		<div class="col-lg-12 col-md-12 col-sm-12">
+    					<label><u>How to Use</u></label>
+    					<br>
+    					<b>Introduction :</b><br>Basket Orders are useful when you want to place a bunch of orders for your hedging requirement or any other strategy requirement.
+    					<br><br>
+    					1. Select the Exchange in which you wish to place your basket order.<br>
+    					2. You can place basket of orders only for 1 exchange at a time. To place orders in multiple exchanges, you need to place multiple basket orders, one for each exchange.
+    					3. Search the instrument or equity or commodity or futures/options that you wish to trade into.<br>
+    					4. Select various other parameters related to order and enter your prices.<br>
+    					5. Total Quantity / Lots : Provide the total quantity that you want to trade into. (ex: u want to but 500 shares of Reliance between, you will put 500. Similarly, if you want to buy 5 lots of Reliance in 5 different orders, you will put Lots as 5)<br>
+    					6. Now, you can click on add button to add the orders to the basket.<br>
+    					7. Finally, click on "Place Basket Orders" to place all these orders at the same time.<br>
+    					8. Make sure, your web browser's Popup blocker is turned off.<br>
+    				</div>
+	        	</div>
+        	</div></div></div>
+</section>
+</form>
+</body>
+</html>
+    

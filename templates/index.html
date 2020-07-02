@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="keyword">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <title>my title for page</title>
+    <style>
+        a {letter-spacing: 2px;
+           text-decoration: none;}
+        
+        body, html {height: 100%;
+                    line-height: 1.8;
+        margin: 0;}
+
+        .top-navbar {
+                overflow: hidden;
+                background-color: darkcyan;
+                position: fixed;
+                top: 0px;
+                width: 100%;
+                }
+
+        .top-navbar a {
+                float: left;
+                display: block;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 17px 16px;
+                text-decoration: none;
+                font-size: 15px;
+                }
+
+        .top-navbar a:hover {
+              background: #ddd;
+              color: black;
+            }
+        .padd-section {
+            padding-bottom: 80px;
+            padding-top: 80px;}
+        .section-title {margin-bottom: 80px;}
+
+        .footer{color: White;
+           background: grey;
+          padding: 16px;
+          margin: 30px;
+          height: auto;
+        }
+        .back-to-top {
+  position: fixed;
+  display: none;
+  background: #71c55d;
+  line-height: 1;
+  color: #fff;
+  padding: 7px 12px 13px 12px;
+  font-size: 16px;
+  border-radius: 2px;
+  right: 15px;
+  bottom: 15px;
+  transition: background 0.5s;
+}
+    </style>
+    <script>
+</script>
+
+</head>
+<body>
+    <div class="top-navbar">
+        <div class="top-bar top-white top-card" id="myNavbar">
+            <a href="#home" class="top-bar-item top-button top-wide"><h6>Fox Trading Solution</h6></a>
+            <div class="top-right top-hide-small">
+                <a href="#algo_tools" class="top-bar-item top-button">Algo Tools</a>
+                <a href="#Tools" class="top-bar-item top-button"><i class="fa fa-user"></i> Tools</a>
+                <a href="#Open Account" class="top-bar-item top-button"><i class="fa fa-th"></i> Open Account</a>
+                <a href="#Compare Broker" class="top-bar-item top-button"><i class="fa fa-usd"></i> Compare Broker</a>
+                <a href="#Compare Broker" class="top-bar-item top-button"><i class="fas fa-book" aria-hidden="true" ></i> Educational</a>
+                <a href="#Compare Broker" class="top-bar-item top-button"><i class="fa fa-youtube" aria-hidden="true"></i> Videos</a>
+                <a href="#Compare Broker" class="top-bar-item top-button"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+                <a href="#contact" class="top-bar-item top-button"><i class="fa fa-envelope"></i> CONTACT</a>
+            </div>
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+            <i class="fa fa-bars"></i></a>   
+        </div>
+    </div>
+    <section id="pricing" class="padd-section text-center wow animated" style="visibility: visible;">
+        <div class="container">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-4 text-center">
+                        <a href="{{ url_for(filename='form.html') }}" class="form-control" style="border: 2px solid black"><img src="#.png" alt="ZERODHA"></a>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 text-center">
+                        <a href="{{ url_for(filename='form2.html') }}" class="form-control">
+                            <img src="#.png" alt="UPSTOX"></a>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 text-center">
+                        <a href="#" class="form-control">
+                            <img src="#" alt="ALICEBLUE"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-xs-12 col-sm-12 col-md-12">
+                    <iframe style="height: 300vh;" width="100%" src="form.html" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+<footer class="footer">
+    <div class="copyright">
+        <div class="container text-center">
+            <p> <b>(C) this is a copyright</b></p>
+        </div>
+    </div>
+</footer>
+
+<a href="#" class="back-to-top" style="display: inline;"><i class="fa fa-chevron-up"></i></a>
+</body>
+</html>
